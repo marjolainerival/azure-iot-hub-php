@@ -85,6 +85,7 @@ class DeviceClient
         $client = new Client([
             'base_uri' => 'https://' . $this->host
         ]);
+        $client->setDefaultOption('verify', false);
 
         $response = $client->request('POST', $uri, [
             'body' => $data,
